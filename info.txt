@@ -1,0 +1,27 @@
+
+Author: Brandon Vowell
+
+Explanation of Code: The code first reads in integers from a file specified on the command line
+                     and puts them into treeNodes with a left, right and parent pointer. These 
+                     treeNodes are then put into linkedlist nodes and inserted into a stack and
+                     a queue. The queue is used to insert the treeNodes into the heap in level
+                     order, in theta(n) time. The stack is then used to heapify the tree, taking 
+                     theta(n) time as well. As the nodes are popped off the stack, they are 
+                     enqueued into a second queue. This new queue is used as I print the root
+                     of the tree and replace it with the last node in a level order traversal. 
+                     I then run heapify on the root and continue the process until the tree is 
+                     empty. This last step takes theta(nlogn) time. Therefore the entire sorting
+                     algorithm takes O(nlogn).
+
+
+    n         |  time
+    ----------+--------
+    1         | 0.0001 
+    10        | 0.0001
+    100       | 0.0003
+    1000      | 0.0021
+    10000     | 0.0223
+    100000    | 0.1905
+    1000000   | 2.2970
+
+
